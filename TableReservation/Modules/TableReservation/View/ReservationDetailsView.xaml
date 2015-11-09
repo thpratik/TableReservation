@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="TableReservation.View.ReservationDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Xceed="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             xmlns:Utilities="clr-namespace:TableReservation.Utilities">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Reservation Details" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Customer Name" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="2" Grid.Column="1" Height="25" Margin="5" Text="{Binding Path=CurrentReservation.CustomerName, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="No of Persons" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="3" Grid.Column="1" Height="25" Margin="5" Text="{Binding Path=CurrentReservation.NoOfPersons, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Time From" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <Xceed:ShortUpDown Grid.Row="4" Grid.Column="1" x:Name="timeFrom" Height="25" Width="60" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Value="{Binding Path=FromHour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                               Minimum="{Binding Path=MinFromHour, UpdateSourceTrigger=PropertyChanged}" Maximum="{Binding Path=MaxFromHour, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Time To" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <Xceed:ShortUpDown Grid.Row="5" Grid.Column="3" x:Name="timeTo" Height="25" Width="60" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Value="{Binding Path=ToHour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                               Minimum="{Binding Path=Value, ElementName=timeFrom, UpdateSourceTrigger=PropertyChanged, Converter={x:Static Utilities:MinMaxToTimeConverter.Instance}}" 
+                               Maximum="{Binding Path=Maximum, ElementName=timeFrom, UpdateSourceTrigger=PropertyChanged, Converter={x:Static Utilities:MinMaxToTimeConverter.Instance}}" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Contact Number" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="6" Grid.Column="1" Height="25" Margin="5" Text="{Binding Path=CurrentReservation.ContactNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="EMail" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="7" Grid.Column="1" Height="25" Margin="5" Text="{Binding Path=CurrentReservation.EMail, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Grid Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="225" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <DataGrid Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Margin="5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding Path=AvailableTables, UpdateSourceTrigger=PropertyChanged}" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="True"
+                  SelectedItem="{Binding Path=SelectedAvailableTable, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="150">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Table Name" Binding="{Binding Path=DisplayName, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTextColumn Header="Max Occupancy" Binding="{Binding Path=MaxOccupancy, UpdateSourceTrigger=PropertyChanged}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Content="&gt;&gt;" Grid.Row="1" Grid.Column="1" Margin="5" Command="{Binding Path=ReserveTableCommand}" />
+            <Button Content="&lt;&lt;" Grid.Row="2" Grid.Column="1" Margin="5" Command="{Binding Path=UnreserveTableCommand}" />
+            
+            <DataGrid Grid.Row="0" Grid.RowSpan="4" Grid.Column="2" Margin="5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding Path=ReservedTables, UpdateSourceTrigger=PropertyChanged}" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="True"
+                  SelectedItem="{Binding Path=SelectedReservedTable, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="150">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Table Name" Binding="{Binding Path=DisplayName, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTextColumn Header="Max Occupancy" Binding="{Binding Path=MaxOccupancy, UpdateSourceTrigger=PropertyChanged}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Save" Height="25" Margin="5" Width="100" Command="{Binding Path=SaveCommand}"  />
+            <Button Grid.Column="1" Content="Cancel" Height="25" Margin="5" Width="100" Command="{Binding Path=CancelCommand}"  />
+        </Grid>
+    </Grid>
+</UserControl>

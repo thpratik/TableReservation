@@ -1,0 +1,8 @@
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.DataServices.Test\bin\Debug\TableReservation.DataServices.Test.dll
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.DataServices.Test\bin\Debug\TableReservation.DataServices.Test.pdb
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.DataServices.Test\obj\Debug\TableReservation.DataServices.Test.dll
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.DataServices.Test\obj\Debug\TableReservation.DataServices.Test.pdb
+D:\TableReservation\TableReservation\Test\TableReservation.DataServices.Test\bin\Debug\TableReservation.DataServices.Test.dll
+D:\TableReservation\TableReservation\Test\TableReservation.DataServices.Test\bin\Debug\TableReservation.DataServices.Test.pdb
+D:\TableReservation\TableReservation\Test\TableReservation.DataServices.Test\obj\Debug\TableReservation.DataServices.Test.dll
+D:\TableReservation\TableReservation\Test\TableReservation.DataServices.Test\obj\Debug\TableReservation.DataServices.Test.pdb

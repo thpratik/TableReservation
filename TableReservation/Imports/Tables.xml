@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tables>
+  <Table Id="101" MaxOccupancy="1" />
+  <Table Id="102" MaxOccupancy="2" />
+  <Table Id="103" MaxOccupancy="3" />
+  <Table Id="104" MaxOccupancy="4" />
+  <Table Id="105" MaxOccupancy="5" />
+  <Table Id="106" MaxOccupancy="6" />
+  <Table Id="107" MaxOccupancy="7" />
+  <Table Id="108" MaxOccupancy="8" />
+  <Table Id="109" MaxOccupancy="9" />
+  <Table Id="110" MaxOccupancy="10" />
+  <!--<Table Id="9" MaxOccupancy="6" />
+  <Table Id="10" MaxOccupancy="6" />-->
+</Tables>

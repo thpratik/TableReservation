@@ -1,0 +1,9 @@
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.BusinessServices.Test\bin\Debug\TableReservation.BusinessServices.Test.dll
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.BusinessServices.Test\bin\Debug\TableReservation.BusinessServices.Test.pdb
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.BusinessServices.Test\obj\Debug\TableReservation.BusinessServices.Test.dll
+E:\Projects\theranos_CodeChallange\TableReservation\Test\TableReservation.BusinessServices.Test\obj\Debug\TableReservation.BusinessServices.Test.pdb
+D:\TableReservation\TableReservation\Test\TableReservation.BusinessServices.Test\bin\Debug\TableReservation.BusinessServices.Test.dll
+D:\TableReservation\TableReservation\Test\TableReservation.BusinessServices.Test\bin\Debug\TableReservation.BusinessServices.Test.pdb
+D:\TableReservation\TableReservation\Test\TableReservation.BusinessServices.Test\obj\Debug\TableReservation.BusinessServices.Test.csprojResolveAssemblyReference.cache
+D:\TableReservation\TableReservation\Test\TableReservation.BusinessServices.Test\obj\Debug\TableReservation.BusinessServices.Test.dll
+D:\TableReservation\TableReservation\Test\TableReservation.BusinessServices.Test\obj\Debug\TableReservation.BusinessServices.Test.pdb

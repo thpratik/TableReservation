@@ -1,0 +1,9 @@
+﻿<Window x:Class="TableReservation.App.ShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Prism="http://www.codeplex.com/prism"
+        Title="Table Reservation" WindowState="Maximized">
+
+    <ContentControl x:Name="ShellViewRegion" Grid.Row="1" Grid.Column="0" Prism:RegionManager.RegionName="ShellViewRegion" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
+
+</Window>

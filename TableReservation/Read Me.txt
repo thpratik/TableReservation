@@ -1,0 +1,56 @@
+Challenge:
+
+[WPF Applicants] Design a WPF application for handling restaurant reservations. The input for the application is an XML file containing information about the tables in the restaurant and the maximum occupancy per table. (please see the attached tables.xml file) The application should handle the following functionality for a single day. Assume that the restaurant operates from 10am to 10pm.
+                a. Add reservation
+                b. Delete reservation
+                c. Edit reservation.
+    While designing your application make the following considerations-
+                a. Recovery if the app crashes. (Reservations should not be lost)
+               b. Please make sure that the UI is always responsive.
+
+
+Solution:
+
+Attached TableReservation solution contains projects based on Microsoft .Net framework 4.5, C# and WPF. These projects are using PRISM libraries with MVVM design pattern. For the NumericUpDown user control this solution also uses the Extended WPF Toolkit Binaries (community edition from Xceed).
+TableReservation module allows user to import tables through xml file. There are following mistakes in given “Tables.xml” file:
+1.	It doesn’t have xml description tag (i.e. <?xml version="1.0" encoding="utf-8"?>)
+2.	It doesn’t contains proper root ending tag (i.e. it should be </Tables> instead of </Table>)
+I have corrected both the errors and created and attached new “Table.xml” file in “Imports” folder, to be used in the application to import the tables.
+
+
+Assumptions:
+
+1.	Reservation date is not used, hence this application allows reservation for current day only. Hence next day, user has to delete all the reservations to do fresh reservation.
+2.	This application needs “Time To” for the reservation. Generally while booking the table over phone, hotel representative doesn’t ask any end time. But for the ease of calculations this application uses the “Time To” field.
+3.	“Time From” and “Time To” fields are using 24 hour format.
+4.	In ViewModel code minimum reservation time and maximum reservation time is handled from 10 am to 10 pm. For that “Time From” has minimum time as 10 am and maximum time as 9 pm and “Time To” has minimum time as selected “Time From” value and maximum as 10 pm.
+5.	Minimum duration for the reservation is assumed to 1 hour. User cannot select minutes.
+
+
+Repository:
+
+1.	To store reservation information, this application uses xml serialization/deserialization and save/retrieve xml files to/from “Data\Reservations” folder. Application gives unique file name using Guid value, which also will be ReservationId for an entity.
+2.	To store table information, this application uses xml serialization/deserialization and save/retrieve xml file to/from “Data\Tables” folder. Application gives unique file name using Guid value, which also will be TableId for an entity.
+
+
+Enhancements:
+
+I am capable to do followings in the TableReservation solution (but could not because of time constrain):
+
+1.	Unit testing for each project
+2.	Theme from Xceed binaries
+3.	Good look and feel of the application by using WPF style feature
+4.	Outlook calendar kind of options to add/delete/modify reservation by selecting the data grid cells.
+
+
+References:
+
+1.	Used Extended WPF Toolkit Binaries, hence referred samples available on CodePlex.
+2.	Used Microsoft.Practices.Prism binaries, hence referred samples available on CodePlex.
+3.	To add columns dynamically into data grid, I referred “BindableColumn” sample available on CodeProject.
+
+
+Notes:
+
+Because of limited time constraint, I've added limited validations and I couldn't work on unit testing.
+This sample is developed by Pratik Thakkar to demonstrate application design using C#, WPF, Prism & MVVM design pattern.

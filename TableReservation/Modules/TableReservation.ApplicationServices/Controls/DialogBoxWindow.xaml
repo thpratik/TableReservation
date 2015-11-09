@@ -1,0 +1,12 @@
+﻿<Window x:Class="TableReservation.ApplicationServices.Controls.DialogBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Path=DialogTitle, UpdateSourceTrigger=PropertyChanged}"
+        xmlns:Utilities="clr-namespace:TableReservation.ApplicationServices.Utilities" 
+        ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow"
+        ShowInTaskbar="False" WindowState="Normal" WindowStartupLocation="CenterScreen" Height="Auto" Width="Auto">
+
+    <Grid Margin="5" Height="Auto" Width="Auto" MinHeight="150" MinWidth="500">
+
+    </Grid>
+</Window>
